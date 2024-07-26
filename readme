@@ -14,4 +14,4 @@ Ein Projekt zum Drucken von WLAN-Vouchern.
 Öffne die Eingabeaufforderung (CMD) oder PowerShell und führe den folgenden Befehl aus, um das Repository zu klonen:
 
 ```bash
-git clone https://github.com/username/MyProject.git
+git clone https://github.com/iTzKaida/Unifi-Voucher-Service.git
