@@ -1,19 +1,17 @@
 import os
 # UniFi API Einstellungen
-BASE_URL = "https://192.168.168.20"
-USERNAME = "voucher-service"
-PASSWORD = "djauDWudn29Dau2024##..!?"
-SITE = "default"
+BASE_URL = "" # UNIFI UDM PRO https-Adress
+USERNAME = "" # UDM PRO Local-User 
+PASSWORD = "" # PASSWORD
+SITE = "default" # Site is mostlikely on default , if not change it here
 VERIFY_SSL = False
 #SSL_CERT_PATH = ""
 
 # Datenbank-Einstellungen
-DATABASE_HOST = "CPTSV112019\C1"
-DATABASE_NAME = "CampingDB"
-DATABASE_USER = "voucher"
-DATABASE_PASSWORD = "ufhwaHWUDhio2024##..Dau"
-
-FINISHED_VOUCHERS_DIR = os.path.join(os.path.dirname(__file__), 'finished_vouchers')
+DATABASE_HOST = "" # DATABASE INSTANCE
+DATABASE_NAME = "" # DATABASE TABLE
+DATABASE_USER = "" # DATABASE USER
+DATABASE_PASSWORD = "" # DATABASE PASSWORD
 
 #Druckerdaten
-DRUCKER_IP = "192.168.178.192"
+DRUCKER_IP = ""
