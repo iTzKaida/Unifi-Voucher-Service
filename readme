@@ -1,0 +1,17 @@
+# MyProject
+
+Ein Projekt zum Drucken von WLAN-Vouchern.
+
+## Voraussetzungen
+
+- Python 3.6 oder höher
+- Git
+
+## Installation
+
+### 1. Repository klonen
+
+Öffne die Eingabeaufforderung (CMD) oder PowerShell und führe den folgenden Befehl aus, um das Repository zu klonen:
+
+```bash
+git clone https://github.com/username/MyProject.git
