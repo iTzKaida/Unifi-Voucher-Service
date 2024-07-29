@@ -1,17 +1,71 @@
-# MyProject
+# Unifi_Voucher-Service
 
-Ein Projekt zum Drucken von WLAN-Vouchern.
+Dieses Projekt bietet ein System zur automatischen Erstellung und zum Druck von WLAN-Vouchern für Gäste. Es besteht aus mehreren Modulen und Skripten, die zusammenarbeiten, um Voucher zu generieren, zu drucken und deren Nutzung zu verwalten.
 
-## Voraussetzungen
+## Inhaltsverzeichnis
 
-- Python 3.6 oder höher
-- Git
+- [Installation](#installation)
+- [Konfiguration](#konfiguration)
+- [Nutzung](#nutzung)
+- [Skripte und Module](#skripte-und-module)
+  - [main.py](#mainpy)
+  - [printer_call.py](#printer_callpy)
+  - [manual_voucher.py](#manual_voucherpy)
+- [Troubleshooting](#troubleshooting)
 
 ## Installation
 
-### 1. Repository klonen
+1. **Python-Version**: Stellen Sie sicher, dass Python 3.7 oder höher installiert ist.
 
-Öffne die Eingabeaufforderung (CMD) oder PowerShell und führe den folgenden Befehl aus, um das Repository zu klonen:
+2. **Abhängigkeiten installieren**:
+   ```bash
+   pip install requests pyodbc pillow brother_ql
 
-```bash
-git clone https://github.com/iTzKaida/Unifi-Voucher-Service.git
+   Oder die setup.py Datei ausführen !
+
+## Konfiguration
+
+1. **Projektstruktur**:
+
+    projektverzeichnis/
+    │
+    ├── config.py
+    ├── main.py
+    ├── manuell_voucher.py
+    ├── printer_call.py
+    ├── requirements.txt
+    ├── voucher_data/
+    │   ├── printed_vouchers.txt
+    │   └── [PNG-Dateien der Voucher]
+    └── README.md
+
+2. **Bearbeitung der config.py**: Hier werden die Eckdaten der UDM & Datenbank hinterlegt. Außerdem kann hier noch die IP des Label-Druckers eingetragen wernde.
+
+## Nutzung
+
+1. **Allgemeiner Nutzen dieses Projektes**:
+
+    Dieses Projekt wurde in Leben gerufen, um eine WLAN-Infrastruktur mit vielen wechselden WLAN-Usern (Gästen) vereinfachen und sicherer zu machen.
+    Es geht sich grundlegend darum, Passwörter die für Gäste-Netze sind, nicht global gültig zu halten und somit jeder das Passwort dieses Netzes kennt.
+    
+    Im Projekt werden in mehrere Funktionen sogenannte "Voucher" in einer Unifi UDM-Pro mit Namen des Gastes und als Ablaufdatum die Abreise erstellt.
+    Die Daten für die Gäste werden aus einer Datenbank (in diesem Fall einem Microsoft SQL-Server) gezogen und im Script weiterverarbeitet.
+
+    Nach dem Erstellen werden mithilfe des "printer-Moduls", Label im Format 62x29 mm automatisch gedruckt. Diese werden dann an die Gäste ausgegeben.
+
+
+## Skripte-und-Module
+
+    - **main.py**: Das Hauptskript, das automatisch die Datenbank abfragt, um Voucher für anreisende Gäste zu generieren und zu drucken.
+    - **manuell_voucher.py** : Ein zusätzliches Modul, das es ermöglicht, manuell Voucher für Gäste zu erstellen, einschließlich der Auswahl von Daueroptionen.
+    - **printer_call.py**: Beinhaltet die Druckfunktionen und andere Hilfsfunktionen, die von `main.py` und `manuell_voucher.py` verwendet werden.
+
+    **Erweiterung folgt**
+
+## Troubleshooting
+
+    **Erweiterung folgt**
+
+
+
+Diese README-Datei enthält eine klare und strukturierte Anleitung zur Installation und Verwendung des Projekts sowie eine Beschreibung der Projektstruktur. Sie hilft den Nutzern, das Projekt schnell zu verstehen und effektiv zu nutzen.
